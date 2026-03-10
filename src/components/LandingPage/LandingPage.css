@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Variables & Base Styles
+   ========================================================================== */
+
+:root {
+    /* Global Colors */
+    --color-bg-deep: hsl(0, 0%, 6%);
+
+
+}
+
+body {
+    background-color: var(--color-bg-deep);
+    overflow: hidden;
+    /* Controlled by script.js (preloader) */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* ==========================================================================
+   Main Content - Masking Section
+   ========================================================================== */
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.mask_front,
+.mask_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mask_front {
+    z-index: 1;
+}
+
+.mask_back {
+    z-index: 2;
+    mask-image: url('/asset/figmamask.svg');
+    -webkit-mask-image: url('/asset/figmamask.svg');
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-color: #A68868;
+    mask-position: var(--x, 50%) var(--y, 50%);
+    -webkit-mask-position: var(--x, 50%) var(--y, 50%);
+    mask-size: var(--size, 400px);
+    -webkit-mask-size: var(--size, 400px);
+    transition: mask-size 0.3s ease, mask-position 0.3s ease, -webkit-mask-size 0.3s ease, -webkit-mask-position 0.3s ease;
+}
+
+/* Mask Section Typography */
+.center_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.small_text {
+    font-family: "Inter", Helvetica, sans-serif;
+    color: #dbd9d9;
+    font-size: 1.1rem;
+    letter-spacing: 0.90rem;
+    font-weight: 600;
+}
+
+.medium_text {
+    font-family: "Outfit", Helvetica, sans-serif;
+    color: #dbd9d9;
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+.large_text {
+    font-family: "Inter", Helvetica, sans-serif;
+    background: linear-gradient(180deg, rgba(227, 195, 157, 1) 0%, rgba(227, 195, 157, 1) 32%, rgba(119, 95, 70, 1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 4.2rem;
+    font-weight: 700;
+}
+
+.small_text_since {
+    margin-top: 4rem;
+    font-size: 0.8rem;
+    background: linear-gradient(180deg, rgba(227, 195, 157, 1) 0%, rgba(227, 195, 157, 1) 32%, rgba(119, 95, 70, 1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.large_text_designing,
+.medium_text_withflair,
+.large_text_codeing,
+.medium_text_care,
+.large_text_excellience,
+.medium_text_isjustmy,
+.large_text_baseline {
+    margin: 0;
+}
+
+.large_text_excellience,
+.large_text_baseline {
+    background: black;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* ==========================================================================
+   Social Media
+   ========================================================================== */
+
+.socialmedia {
+    position: absolute;
+    top: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-direction: column;
+    left: .5rem;
+    padding: 0;
+}
+
+.socialmedia li {
+    margin: 0.5rem 0;
+    padding: 20px;
+}
+
+.socialmedia i {
+    color: #A68868;
+    font-size: 23px;
+    transition: color 0.3s ease;
+}
+
+.mask_back .socialmedia i {
+    color: black;
+}
+
+
