@@ -1,0 +1,394 @@
+/* ============================================================
+   FONTS
+   Google Fonts: DM Mono + DM Sans
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+.folder-design-app {
+    --bg:#11110f;
+    --fg: #f1eded;  
+    --variant-1: #b19067;
+    --variant-2: #d5d9d2;
+    --variant-3: #5c4a35;
+    --disabled-folder-bg: #e8ebe4;
+    --disabled-folder-fg: #b0b3ad;
+
+    background-color: var(--bg);
+    background-image: url("/portfolio-l/folder_design/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    color: var(--fg);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.folder-design-app * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.folder-design-app img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.folder-design-app h1 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 2.75rem;
+    font-weight: 400;
+}
+
+.folder-design-app p {
+    text-transform: uppercase;
+    font-family: "DM Mono", monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.folder-design-app h1,
+.folder-design-app p {
+    transition: color 250ms ease;
+    line-height: 1;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.folder-design-app nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+/* ============================================================
+   HERO TEXT
+   ============================================================ */
+.folder-design-app .hero-text {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.folder-design-app .hero-text h1 {
+    font-family: "DM Mono", monospace;
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--variant-2);
+    letter-spacing: -0.08em;
+    white-space: nowrap;
+}
+
+/* ============================================================
+   FOLDERS CONTAINER
+   ============================================================ */
+.folder-design-app .folders {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 250px;
+    padding-bottom: 0;
+}
+
+.featured-inner-app:not(.is-active) .folder-design-app .folders {
+    width: 84%;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   ROW
+   ============================================================ */
+.folder-design-app .row {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+/* ============================================================
+   FOLDER
+   ============================================================ */
+.folder-design-app .folder {
+    position: relative;
+    flex: 1;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.featured-inner-app:not(.is-active) .folder-design-app .folder {
+    height: 180px;
+}
+
+.folder-design-app .row:nth-child(2) .folder:nth-child(1) { flex: 2; }
+.folder-design-app .row:nth-child(2) .folder:nth-child(2) { flex: 3; }
+
+/* ============================================================
+   FOLDER PREVIEW
+   ============================================================ */
+.folder-design-app .folder-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25rem;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Individual preview image card */
+.folder-design-app .folder-preview-img {
+    position: absolute;
+    top: 50%;
+    width: 8rem;
+    height: 12rem;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+.folder-design-app .folder-preview-img:hover {
+    filter: brightness(1.2);
+}
+
+/* Positioning for each of the 3 preview images */
+.folder-design-app .folder-preview-img:nth-child(1) { left: 20%; transform-origin: top left; }
+.folder-design-app .folder-preview-img:nth-child(2) { left: 50%; transform-origin: top center; }
+.folder-design-app .folder-preview-img:nth-child(3) { left: 80%; transform-origin: top right; }
+
+/* ============================================================
+   FOLDER WRAPPER
+   ============================================================ */
+.folder-design-app .folder-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+}
+
+.folder-design-app .folder-wrapper h1,
+.folder-design-app .folder-wrapper p {
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ============================================================
+   FOLDER INDEX
+   ============================================================ */
+.folder-design-app .folder-index {
+    position: relative;
+    width: 35%;
+    padding: 0.75rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    z-index: 1;
+}
+
+/* Slanted slope extension of the index tab */
+.folder-design-app .folder-index::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(100% - 15px);
+    height: 100%;
+    width: 2.5rem;
+    transform-origin: bottom left;
+    transform: skewX(30deg);
+    border-top-right-radius: 12px;
+    z-index: -1;
+}
+
+/* ============================================================
+   FOLDER NAME
+   ============================================================ */
+.folder-design-app .folder-name {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding: 0 0.25rem;
+    padding-left: 2rem;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.folder-design-app .folder-name::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: transparent;
+    pointer-events: auto;
+}
+
+/* Shared transition */
+.folder-design-app .folder-index,
+.folder-design-app .folder-index::after,
+.folder-design-app .folder-name {
+    transition: background-color 250ms ease;
+}
+
+/* ============================================================
+   FOLDER VARIANTS
+   ============================================================ */
+.folder-design-app .folder.variant-1 .folder-index,
+.folder-design-app .folder.variant-1 .folder-index::after,
+.folder-design-app .folder.variant-1 .folder-name {
+    background-color: var(--variant-1);
+}
+.folder-design-app .folder.variant-2 .folder-index,
+.folder-design-app .folder.variant-2 .folder-index::after,
+.folder-design-app .folder.variant-2 .folder-name {
+    background-color: var(--variant-2);
+}
+.folder-design-app .folder.variant-3 .folder-index,
+.folder-design-app .folder.variant-3 .folder-index::after,
+.folder-design-app .folder.variant-3 .folder-name {
+    background-color: var(--variant-3);
+}
+
+.folder-design-app .folder.disabled .folder-index,
+.folder-design-app .folder.disabled .folder-index::after,
+.folder-design-app .folder.disabled .folder-name {
+    background-color: var(--disabled-folder-bg);
+}
+
+/* Dark text override for specific folder positions */
+.folder-design-app .row:nth-child(2) .folder:nth-child(1) .folder-wrapper h1,
+.folder-design-app .row:nth-child(2) .folder:nth-child(1) .folder-wrapper p,
+.folder-design-app .row:nth-child(1) .folder:nth-child(2) .folder-wrapper h1,
+.folder-design-app .row:nth-child(1) .folder:nth-child(2) .folder-wrapper p,
+.folder-design-app .row:nth-child(3) .folder:nth-child(2) .folder-wrapper h1,
+.folder-design-app .row:nth-child(3) .folder:nth-child(2) .folder-wrapper p {
+    color: var(--variant-3);
+}
+
+.folder-design-app .folder.disabled p,
+.folder-design-app .folder.disabled h1 {
+    color: var(--disabled-folder-fg);
+}
+
+/* ============================================================
+   ROW VERTICAL OFFSETS
+   ============================================================ */
+/* Full screen default */
+.folder-design-app .row:nth-child(1) { bottom: -9rem; }
+.folder-design-app .row:nth-child(2) { bottom: -3.5rem; }
+.folder-design-app .row:nth-child(3) { bottom: 2rem; }
+
+/* Squished thumbnail view */
+.featured-inner-app:not(.is-active) .folder-design-app .row:nth-child(1) { bottom: -8rem; }
+.featured-inner-app:not(.is-active) .folder-design-app .row:nth-child(2) { bottom: -3rem; }
+.featured-inner-app:not(.is-active) .folder-design-app .row:nth-child(3) { bottom: 2rem; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1000px) {
+    .folder-design-app h1 { font-size: 2rem; }
+    .folder-design-app .row { flex-direction: column; bottom: 0 !important; }
+    .folder-design-app .folder { margin-bottom: -0.5rem; }
+    .folder-design-app .folder-preview { display: none; }
+    .folder-design-app .folder-name { padding: 0 2rem 2rem; }
+
+    .folder-design-app .row:nth-child(2) .folder.variant-2 .folder-index,
+    .folder-design-app .row:nth-child(2) .folder.variant-2 .folder-index::after,
+    .folder-design-app .row:nth-child(2) .folder.variant-2 .folder-name { background-color: var(--variant-3); }
+
+    .folder-design-app .row:nth-child(2) .folder.variant-3 .folder-index,
+    .folder-design-app .row:nth-child(2) .folder.variant-3 .folder-index::after,
+    .folder-design-app .row:nth-child(2) .folder.variant-3 .folder-name { background-color: var(--variant-2); }
+}
+
+/* ============================================================
+   IMAGE VIEWER MODAL
+   ============================================================ */
+.folder-design-app .image-viewer {
+    position: absolute; /* Using absolute to stay securely inside the bounded container rather than fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 15, 0.95);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.folder-design-app .image-viewer.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.folder-design-app .close-viewer-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: 2px solid var(--fg);
+    color: var(--fg);
+    padding: 0.5rem 1.5rem;
+    font-family: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.folder-design-app .close-viewer-btn:hover {
+    background-color: var(--fg);
+    color: var(--bg);
+}
+
+.folder-design-app .viewer-content {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.folder-design-app .viewer-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 12px;
+    object-fit: contain;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.folder-design-app .viewer-content h2 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 2rem;
+    color: var(--fg);
+    margin-bottom: 0.5rem;
+}
+
+.folder-design-app .viewer-content p {
+    font-size: 1rem;
+    opacity: 0.8;
+}

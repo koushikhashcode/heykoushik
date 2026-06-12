@@ -107,6 +107,9 @@ const LandingPage = () => {
             <div className="large_text">
               <h1 className="large_text_baseline">BASELINE</h1>
             </div>
+            <div className="medium_text">
+              <h3 className="medium_text_care">BY DEFAULT</h3>
+            </div>
             <div className="small_text">
               <h6 className="small_text_since">SINCE 2020</h6>
             </div>

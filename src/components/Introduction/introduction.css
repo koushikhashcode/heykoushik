@@ -1,0 +1,16 @@
+.hero_next_section {
+    background-color: #131313;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big_text {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: antiquewhite;
+    font-size: 3rem;
+    text-align: center;
+}

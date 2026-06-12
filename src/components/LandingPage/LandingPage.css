@@ -11,8 +11,6 @@
 
 body {
     background-color: var(--color-bg-deep);
-    overflow: hidden;
-    /* Controlled by script.js (preloader) */
     margin: 0;
     padding: 0;
 }
@@ -94,7 +92,7 @@ body {
 .small_text_since {
     margin-top: 4rem;
     font-size: 0.8rem;
-    background: linear-gradient(180deg, rgba(227, 195, 157, 1) 0%, rgba(227, 195, 157, 1) 32%, rgba(119, 95, 70, 1) 100%);
+    background: linear-gradient(180deg, rgb(227, 195, 157) 0%, rgba(227, 195, 157, 1) 32%, rgba(119, 95, 70, 1) 100%);
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -130,6 +128,7 @@ body {
     flex-direction: column;
     left: .5rem;
     padding: 0;
+    margin-left: 30px;
 }
 
 .socialmedia li {
