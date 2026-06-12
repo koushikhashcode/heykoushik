@@ -14,7 +14,7 @@
     --disabled-folder-fg: #b0b3ad;
 
     background-color: var(--bg);
-    background-image: url("/heykoushik/folder_design/bg.png");
+    background-image: url("/folder_design/bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
