@@ -276,7 +276,7 @@ const BentoGrid = () => {
                   className="button"
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = '/assets/cv.png';
+                    link.href = 'assets/cv.png';
                     link.download = 'Koushik_Mandal_CV.png';
                     link.click();
                   }}
