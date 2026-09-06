@@ -1,0 +1,201 @@
+/* InteractiveFolderCard Styles */
+.folder-bento-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.folder-grid-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--accent-beige);
+  padding: 1rem;
+  line-height: 1.625;
+}
+
+@media (min-width: 640px) {
+  .folder-grid-texture {
+    padding: 1.25rem;
+  }
+}
+
+.folder-texture-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.6;
+  min-width: 0;
+}
+
+.folder-texture-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 0.5rem;
+}
+
+.folder-texture-status {
+  flex-shrink: 0;
+}
+
+.folder-ledger-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.625rem;
+  padding-left: 1.125rem;
+  padding-right: 1.125rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.25rem;
+  position: relative;
+  z-index: 10;
+  min-width: 0;
+  width: 100%;
+  user-select: none;
+}
+
+@media (min-width: 640px) {
+  .folder-ledger-header {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1rem;
+  }
+}
+
+.folder-ledger-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.folder-ledger-status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--accent-beige);
+  box-shadow: 0 0 8px var(--accent-beige);
+  flex-shrink: 0;
+}
+
+.folder-ledger-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-beige);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .folder-ledger-title {
+    letter-spacing: 0.1em;
+  }
+}
+
+.folder-ledger-right {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-width: 0;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.folder-ledger-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: #a3a3a3;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.folder-ledger-prefix {
+  color: #737373;
+}
+
+.folder-ledger-full {
+  color: #d4d4d4;
+}
+
+.folder-ledger-short {
+  color: #d4d4d4;
+  display: none;
+}
+
+.hero-text-watermark {
+  pointer-events: none;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-watermark-title {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.1);
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.folders-stage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 10;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.folder-row {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.preview-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.tab-number {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.folder-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
