@@ -1,0 +1,100 @@
+/* =========================================================================
+   PHOTO MOSAIC COMPONENT STYLES
+   ========================================================================= */
+
+.paper-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 4px 4px;
+}
+
+.paper-edge-highlight {
+  box-shadow: 
+    inset 1px 1px 0px rgba(255, 255, 255, 0.22),
+    inset -1px -1px 0px rgba(0, 0, 0, 0.75);
+}
+
+.photo-mosaic-frame {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.photo-mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1.5px;
+  padding: 3px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.photo-tile-outer {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+  perspective: 600px;
+  will-change: transform, filter;
+}
+
+.photo-tile-outer:focus-visible {
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.8);
+}
+
+.photo-tile-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.photo-tile-paper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #050507;
+  will-change: filter;
+}
+
+.photo-tile-img {
+  position: absolute;
+  pointer-events: none;
+  max-width: none;
+  user-select: none;
+}
+
+.photo-tile-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+.photo-tile-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.photo-tile-border {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 2px;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.28), inset -1px -1px 0px rgba(0, 0, 0, 0.85);
+}

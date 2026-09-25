@@ -1,0 +1,163 @@
+export const TIMELINE_MILESTONES = [
+  {
+    id: 'milestone-2026',
+    year: 2026,
+    yearCentury: '20',
+    yearDecade: '26',
+    category: 'PERSONAL PROJECT',
+    headlineLine1: 'ZERO-WAIT MICRO-CLINICS',
+    headlineLine2: 'PHARMACY AI NETWORK',
+    headline1IsGold: true,
+    leadInRuler: [
+      { year: 2026, isMilestone: true },
+    ],
+    milestoneCaption: {
+      title: 'PERSONAL PROJECT // HEALTHCARE TECH',
+      detail: 'Automated patient intake & tele-specialist network.',
+    },
+    bodyParagraph:
+      'An AI network connecting local pharmacies to specialists for zero-wait consultations, automated vitals intake, and instant prescription fulfillment.',
+    imageIllustrationSide: 'left',
+    illustrationType: 'micro-clinics',
+    technicalSpecs: [
+      { label: 'SYSTEM', value: 'AI Triage & Tele-Clinic Hub' },
+      { label: 'IMPACT', value: 'Zero-Wait Consultations & Automated Vitals', highlight: true },
+      { label: 'TARGET', value: 'Neighborhood Pharmacy Networks' },
+    ],
+  },
+  {
+    id: 'milestone-2025',
+    year: 2025,
+    yearCentury: '20',
+    yearDecade: '25',
+    category: 'SMART INDIA HACKATHON',
+    headlineLine1: 'OPEN-PIT MINE SAFETY',
+    headlineLine2: 'AI ROCKFALL PREDICTION',
+    headline1IsGold: false,
+    leadInRuler: [
+      { year: 2026 },
+      { year: 2025, isMilestone: true },
+    ],
+    milestoneCaption: {
+      title: 'SIH HACKATHON // GEOTECHNICAL AI',
+      detail: 'Predictive slope sensor fusion & early hazard alerting.',
+    },
+    bodyParagraph:
+      'AI hazard prediction system for open-pit mines built for SIH. Processes real-time seismic telemetry and slope sensor data to forecast rockfalls before failure occurs.',
+    imageIllustrationSide: 'right',
+    illustrationType: 'rockfall-mine',
+    technicalSpecs: [
+      { label: 'EVENT', value: 'Smart India Hackathon (SIH)' },
+      { label: 'SOLUTION', value: 'Predictive Rockfall Early-Warning System', highlight: true },
+      { label: 'DOMAIN', value: 'Heavy Industrial Geotechnical Safety' },
+    ],
+  },
+  {
+    id: 'milestone-2024',
+    year: 2024,
+    yearCentury: '20',
+    yearDecade: '24',
+    category: 'SHORT FILM',
+    headlineLine1: 'CINEMATIC NARRATIVE',
+    headlineLine2: 'NOMINATED FOR BEST STORY',
+    headline1IsGold: true,
+    leadInRuler: [
+      { year: 2025 },
+      { year: 2024, isMilestone: true },
+    ],
+    milestoneCaption: {
+      title: 'SHORT FILM // VISUAL STORYTELLING',
+      detail: 'Screenwriting, directing & atmospheric cinematography.',
+    },
+    bodyParagraph:
+      'Wrote and directed a narrative short film nominated for Best Story. Focused on character tension, frame composition, low-key lighting ratios, and sound design.',
+    imageIllustrationSide: 'left',
+    illustrationType: 'short-film',
+    technicalSpecs: [
+      { label: 'RECOGNITION', value: 'Official Nomination — Best Story', highlight: true },
+      { label: 'ROLE', value: 'Director, Writer & Cinematographer' },
+      { label: 'CRAFT', value: 'Screenplay, Lighting, Editing & Sound' },
+    ],
+  },
+  {
+    id: 'milestone-2023',
+    year: 2023,
+    yearCentury: '20',
+    yearDecade: '23',
+    category: 'ACADEMIC & HACKATHON',
+    headlineLine1: 'COLLEGIATE MILESTONES',
+    headlineLine2: 'RANK 1ST AT SIT & HACKATHON FINALIST',
+    headline1IsGold: false,
+    leadInRuler: [
+      { year: 2024 },
+      { year: 2023, isMilestone: true },
+    ],
+    milestoneCaption: {
+      title: 'COLLEGIATE HIGHLIGHTS // 2023',
+      detail: 'SIT Rank 1st + Infusion Hackathon 1.0 Finalist.',
+    },
+    bodyParagraph:
+      'A key milestone year marked by academic distinction at SIT, top finalist ranking in competitive hackathons, and senior secondary graduation.',
+    clusterItems: [
+      {
+        id: 'cluster-sit',
+        tag: 'SIT // ACADEMIC EXCELLENCE',
+        headlineLine1: 'SECURED 1ST POSITION',
+        headlineLine2: 'AT SILIGURI INSTITUTE OF TECH',
+        headline1IsGold: true,
+        copy: 'Secured 1st position at Siliguri Institute of Technology (SIT), earning premier academic standing across core computer science disciplines.',
+      },
+      {
+        id: 'cluster-hackathon',
+        tag: 'INFUSION HACKATHON 1.0',
+        headlineLine1: 'TOP FINALIST SELECTION',
+        headlineLine2: 'COMPETITIVE HACKATHON',
+        headline1IsGold: false,
+        copy: 'Selected as a top finalist at Infusion Hackathon 1.0, architecting functional software prototypes under strict time constraints.',
+      },
+      {
+        id: 'cluster-isc',
+        tag: 'CLASS 12 (ISC)',
+        headlineLine1: 'SCORED 75.20%',
+        headlineLine2: 'SENIOR SECONDARY EXAM',
+        headline1IsGold: true,
+        copy: 'Graduated Senior Secondary (ISC) with 75.20%, building a strong foundation in Computer Science, Mathematics, and Physics.',
+      },
+    ],
+    imageIllustrationSide: 'right',
+    illustrationType: 'hackathon-trophy',
+    technicalSpecs: [
+      { label: 'COLLEGE RANK', value: '1st Rank at SIT', highlight: true },
+      { label: 'HACKATHON', value: 'Top Finalist — Infusion Hackathon 1.0' },
+      { label: 'BOARD EXAM', value: 'Class 12 (ISC) — Scored 75.20%' },
+    ],
+  },
+  {
+    id: 'milestone-2021',
+    year: 2021,
+    yearCentury: '20',
+    yearDecade: '21',
+    category: 'CLASS 10 (ICSE)',
+    headlineLine1: 'SCHOLASTIC FOUNDATION',
+    headlineLine2: 'SCORED 84.20% IN ICSE',
+    headline1IsGold: true,
+    leadInRuler: [
+      { year: 2023 },
+      { year: 2022 },
+      { year: 2021, isMilestone: true },
+    ],
+    milestoneCaption: {
+      title: 'ICSE BOARD // SECONDARY EDUCATION',
+      detail: 'Class 10 distinction & first code written.',
+    },
+    bodyParagraph:
+      'Graduated Class 10 (ICSE) with 84.20% distinction, discovering a passion for structured algorithm design, software development, and digital media.',
+    imageIllustrationSide: 'left',
+    illustrationType: 'icse-academics',
+    technicalSpecs: [
+      { label: 'BOARD EXAM', value: 'Class 10 (ICSE) Matriculation', highlight: true },
+      { label: 'PERFORMANCE', value: '84.20% Academic Distinction' },
+      { label: 'MILESTONE', value: 'First exposure to programming & creative media' },
+    ],
+  },
+];

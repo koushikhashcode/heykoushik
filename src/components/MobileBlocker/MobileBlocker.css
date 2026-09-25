@@ -1,0 +1,203 @@
+/* ==========================================================================
+   MOBILE BLOCKER - Full Screen Overlay (Desktop & Tablet Access Only)
+   ========================================================================== */
+
+.mobile-blocker-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background-color: #060608;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.mobile-blocker-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: rgba(16, 16, 20, 0.95);
+  border: 1px solid rgba(197, 168, 128, 0.25);
+  border-radius: 28px;
+  padding: 2.25rem 1.75rem;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(197, 168, 128, 0.05);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-blocker-glow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(197, 168, 128, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mobile-icon-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 1.25rem;
+}
+
+.mobile-icon-badge {
+  position: relative;
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(197, 168, 128, 0.15) 0%, rgba(197, 168, 128, 0.05) 100%);
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.device-icon.monitor-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #c5a880;
+}
+
+.device-icon.phone-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #ef4444;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: #0d0d10;
+  border-radius: 9999px;
+  padding: 2px;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.mobile-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.85rem;
+  border-radius: 9999px;
+  background-color: rgba(197, 168, 128, 0.1);
+  border: 1px solid rgba(197, 168, 128, 0.25);
+  margin-bottom: 1rem;
+}
+
+.gold-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: #c5a880;
+  box-shadow: 0 0 8px #c5a880;
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.mobile-status-text {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #c5a880;
+  text-transform: uppercase;
+}
+
+.mobile-blocker-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.mobile-blocker-desc {
+  font-size: 0.875rem;
+  color: #a3a3a3;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.mobile-blocker-desc strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.mobile-metrics-box {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: center;
+}
+
+.metric-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #71717a;
+}
+
+.metric-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.metric-value.current {
+  color: #ef4444;
+}
+
+.metric-value.required {
+  color: #c5a880;
+}
+
+.metric-divider {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-footer-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.775rem;
+  color: #8e8e93;
+  line-height: 1.4;
+}
+
+.hint-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: #c5a880;
+  flex-shrink: 0;
+}

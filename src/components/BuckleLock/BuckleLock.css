@@ -1,0 +1,481 @@
+/* ==========================================================================
+   BUCKLE LOCK STYLES & KEYFRAME ANIMATION SYSTEM
+   Exact replication from Buckel_lock design system
+   ========================================================================== */
+
+:root {
+  --u: calc(100vw / 2576);
+}
+
+.font-serif-display {
+  font-family: 'Instrument Serif', 'Times New Roman', Times, serif;
+}
+
+.font-sans-body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Main Application Layout for Buckle Lock Stage */
+.buckle-app-container {
+  position: relative;
+  width: 100%;
+  background-color: #FDFDFD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buckle-app-container ::selection {
+  background-color: rgba(198, 161, 91, 0.2);
+}
+
+/* Stage Section */
+.stage {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  flex-shrink: 0;
+  background-color: #FDFDFD;
+  --u: calc(100vw / 2576);
+}
+
+.stage-paper-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+}
+
+/* Big Black Div Header Flap */
+.big-black-div {
+  position: relative;
+  width: 100%;
+  background-color: #14151A;
+  border-bottom-left-radius: clamp(60px, 12vw, 280px);
+  border-bottom-right-radius: clamp(60px, 12vw, 280px);
+  box-shadow: 
+    0 calc(12 * var(--u)) calc(30 * var(--u)) -calc(6 * var(--u)) rgba(15, 16, 22, 0.28),
+    0 calc(32 * var(--u)) calc(70 * var(--u)) -calc(12 * var(--u)) rgba(15, 16, 22, 0.18),
+    0 calc(60 * var(--u)) calc(120 * var(--u)) -calc(16 * var(--u)) rgba(0, 0, 0, 0.10);
+  overflow: visible;
+  z-index: 20;
+}
+
+.big-black-div-grain {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+}
+
+.label-creative {
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #FFFFFF;
+  user-select: none;
+}
+
+.label-year {
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #FFFFFF;
+  user-select: none;
+}
+
+.label-design {
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #FFFFFF;
+  user-select: none;
+}
+
+.headline-thank-you {
+  position: absolute;
+  font-family: 'Instrument Serif', serif;
+  color: #FFFFFF;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Tape Strips */
+.gold-tape-strip {
+  position: absolute;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.gold-tape-text {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  color: #111111;
+}
+
+.white-tape-strip {
+  position: absolute;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  user-select: none;
+}
+
+.white-tape-text {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  color: #111111;
+}
+
+/* White Big Div & Stationery Page */
+.white-big-div {
+  position: relative;
+  width: 100%;
+  z-index: 15;
+  user-select: none;
+}
+
+.white-paper-base {
+  position: relative;
+  width: 100%;
+  background-color: #FFFFFF;
+  pointer-events: auto;
+}
+
+/* Finish Selector Controls */
+.finish-selector {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem;
+  background-color: rgba(20, 21, 26, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.3s ease;
+}
+
+.finish-selector-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(198, 161, 91, 0.8);
+  padding-left: 0.5rem;
+  padding-right: 0.25rem;
+  font-weight: 500;
+  user-select: none;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .finish-selector-label {
+    display: inline;
+  }
+}
+
+.finish-selector-btn {
+  padding: 0.25rem 0.625rem;
+  font-size: 11px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  white-space: nowrap;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.finish-selector-btn:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.finish-selector-btn-active {
+  background-color: #c6a15b;
+  color: #14151A;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Bag Buckle Lock Component Styles */
+.BagBuckleLock {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.BagBuckleLock:focus {
+  outline: none;
+}
+
+.buckle-latch-anchor {
+  position: absolute;
+  left: 50%;
+  pointer-events: none;
+  top: 46%;
+  width: 2px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.buckle-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 16px 24px rgba(15, 16, 22, 0.22)) drop-shadow(0 4px 8px rgba(15, 16, 22, 0.14));
+}
+
+.buckle-tooltip {
+  pointer-events: none;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+  background-color: rgba(20, 21, 26, 0.95);
+}
+
+.buckle-tooltip-gold {
+  color: #FAE5AB;
+  border: 1px solid rgba(198, 161, 91, 0.3);
+}
+
+.buckle-tooltip-noir {
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.buckle-tooltip-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.buckle-tooltip-hidden {
+  transform: translate(-50%, 0.25rem);
+  opacity: 0;
+}
+
+/* Brushed metal effect for gold tape */
+.gold-tape-texture {
+  background: linear-gradient(
+    90deg,
+    #b58b3a 0%,
+    #c49e54 18%,
+    #e8ce8b 42%,
+    #fae5ab 50%,
+    #d9b565 65%,
+    #c6a15b 82%,
+    #8f6f2e 100%
+  );
+  position: relative;
+}
+
+.gold-tape-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.08) 0px,
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.06) 3px,
+    rgba(0, 0, 0, 0.06) 4px,
+    transparent 4px,
+    transparent 6px
+  );
+  pointer-events: none;
+}
+
+/* Mechanical Coupling: Page Jerk & Flap Recoil */
+/* Uses solid px values — var(--u) is 0 outside the .stage context */
+@keyframes whitePageJerk {
+  0%   { transform: translateY(24px);  }
+  20%  { transform: translateY(20px);  }
+  45%  { transform: translateY(8px);   }
+  68%  { transform: translateY(-10px); }
+  80%  { transform: translateY(-18px); }
+  90%  { transform: translateY(4px);   }
+  95%  { transform: translateY(-3px);  }
+  100% { transform: translateY(0px);   }
+}
+
+@keyframes whitePageRelease {
+  0%   { transform: translateY(0px);  }
+  15%  { transform: translateY(-4px); }
+  50%  { transform: translateY(18px); }
+  75%  { transform: translateY(22px); }
+  100% { transform: translateY(24px); }
+}
+
+@keyframes blackFlapRecoil {
+  0%, 60% { transform: translateY(0);    }
+  78%      { transform: translateY(6px);  }
+  90%      { transform: translateY(-2px); }
+  100%     { transform: translateY(0);    }
+}
+
+.white-div-locked {
+  animation: whitePageJerk 0.95s cubic-bezier(0.12, 0.9, 0.18, 1.05) forwards;
+}
+
+.white-div-open {
+  animation: whitePageRelease 0.65s cubic-bezier(0.25, 1, 0.45, 1) forwards;
+}
+
+.white-div-initial-open {
+  transform: translateY(24px);
+}
+
+.big-black-div-locked {
+  animation: blackFlapRecoil 0.85s ease-out forwards;
+}
+
+/* Magnetic Clasp Closing Keyframe Animation */
+@keyframes magneticClaspSnapIn {
+  0% {
+    transform: translateY(70px);
+  }
+  25% {
+    transform: translateY(62px);
+  }
+  65% {
+    transform: translateY(26px);
+  }
+  82% {
+    transform: translateY(-3.2px);
+  }
+  92% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Magnetic Release Opening Keyframe Animation */
+@keyframes magneticClaspReleaseOut {
+  0% {
+    transform: translateY(0px);
+  }
+  18% {
+    transform: translateY(-2px);
+  }
+  65% {
+    transform: translateY(52px);
+  }
+  100% {
+    transform: translateY(70px);
+  }
+}
+
+/* Female housing recoil absorption on magnetic impact */
+@keyframes femaleHousingRecoil {
+  0%, 70% {
+    transform: translateY(0);
+  }
+  82% {
+    transform: translateY(-2.2px);
+  }
+  94% {
+    transform: translateY(0.6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Left spring arm compression into socket throat then snap out */
+@keyframes leftProngSnap {
+  0%, 35% {
+    transform: scaleX(1.02) translateX(0);
+  }
+  68% {
+    transform: scaleX(0.91) translateX(3px);
+  }
+  82% {
+    transform: scaleX(1.05) translateX(-1px);
+  }
+  100% {
+    transform: scaleX(1) translateX(0);
+  }
+}
+
+/* Right spring arm compression into socket throat then snap out */
+@keyframes rightProngSnap {
+  0%, 35% {
+    transform: scaleX(1.02) translateX(0);
+  }
+  68% {
+    transform: scaleX(0.91) translateX(-3px);
+  }
+  82% {
+    transform: scaleX(1.05) translateX(1px);
+  }
+  100% {
+    transform: scaleX(1) translateX(0);
+  }
+}
+
+.buckle-lower-locked {
+  animation: magneticClaspSnapIn 0.85s cubic-bezier(0.12, 0.9, 0.18, 1.05) forwards;
+}
+
+.buckle-lower-open {
+  animation: magneticClaspReleaseOut 0.6s cubic-bezier(0.25, 1, 0.45, 1) forwards;
+}
+
+.buckle-lower-initial-open {
+  transform: translateY(70px);
+}
+
+.female-housing-locked {
+  animation: femaleHousingRecoil 0.85s ease-out forwards;
+}
+
+.left-prong-locked {
+  transform-origin: 64px 246px;
+  animation: leftProngSnap 0.85s ease-out forwards;
+}
+
+.right-prong-locked {
+  transform-origin: 136px 246px;
+  animation: rightProngSnap 0.85s ease-out forwards;
+}

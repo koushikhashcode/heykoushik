@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import './Footer.css';
+import React, { useEffect, useRef } from "react";
+import "./Footer.css";
 
 const Footer = () => {
   const footerRootRef = useRef(null);
@@ -11,9 +11,9 @@ const Footer = () => {
     const footerInner = footerInnerRef.current;
     if (!footerRoot || !footerInner) return;
 
-    footerRoot.style.perspective = '1000px';
-    footerInner.style.transformOrigin = 'center center';
-    footerInner.style.willChange = 'transform';
+    footerRoot.style.perspective = "1000px";
+    footerInner.style.transformOrigin = "center center";
+    footerInner.style.willChange = "transform";
 
     const updateAnimation = () => {
       const isMobile = window.innerWidth <= 768;
@@ -46,25 +46,24 @@ const Footer = () => {
     const onScroll = () => requestAnimationFrame(updateAnimation);
     const onResize = () => requestAnimationFrame(updateAnimation);
 
-    window.addEventListener('scroll', onScroll);
-    window.addEventListener('resize', onResize);
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize);
     updateAnimation();
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onResize);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
   const handleBackToTop = (e) => {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <footer className="footer-root js-footer" ref={footerRootRef}>
       <div className="footer-inner" ref={footerInnerRef}>
-
         {/* Decorative SVG on the right */}
         <div className="footer-inner-svg-right"></div>
 
@@ -94,12 +93,22 @@ const Footer = () => {
                   <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
                 </svg>
               </a>
-              <a href="#" className="footer-social-link" aria-label="X (Twitter)">
+              <a
+                href="#"
+                className="footer-social-link"
+                aria-label="X (Twitter)"
+              >
                 <svg className="footer-icon" viewBox="0 0 512 512">
                   <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z" />
                 </svg>
               </a>
-              <a href="https://github.com/koushikhashcode" className="footer-social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/koushikhashcode"
+                className="footer-social-link"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg className="footer-icon" viewBox="0 0 496 512">
                   <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z" />
                 </svg>
@@ -145,34 +154,56 @@ const Footer = () => {
             <div className="footer-cta-actions">
               <div className="footer-gooey-button-wrapper">
                 {/* SVG Gooey Filter */}
-                <svg width="0" height="0" style={{ position: 'absolute' }} colorInterpolationFilters="sRGB">
+                <svg
+                  width="0"
+                  height="0"
+                  style={{ position: "absolute" }}
+                  colorInterpolationFilters="sRGB"
+                >
                   <defs>
                     <filter id="footer-gooey">
-                      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                      <feGaussianBlur
+                        in="SourceGraphic"
+                        stdDeviation="5"
+                        result="blur"
+                      />
                       <feColorMatrix
                         in="blur"
                         mode="matrix"
                         values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
                         result="gooey"
                       />
-                      <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
+                      <feComposite
+                        in="SourceGraphic"
+                        in2="gooey"
+                        operator="atop"
+                      />
                     </filter>
                   </defs>
                 </svg>
 
                 <div className="footer-gooey-button-group">
-                  <a href="mailto:koushik.hashcode@gmail.com" className="footer-cta-button-gooey">
+                  <a
+                    href="mailto:koushik.hashcode@gmail.com"
+                    className="footer-cta-button-gooey"
+                  >
                     <span className="button-text">Start a project</span>
                     <div className="footer-btn-circle-bg">
                       <div className="footer-floating-arrow-container">
                         <div className="footer-arrow-clipper">
                           <div className="footer-arrow-primary">
-                            <svg className="footer-icon-arrow" viewBox="0 0 384 512">
+                            <svg
+                              className="footer-icon-arrow"
+                              viewBox="0 0 384 512"
+                            >
                               <path d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z" />
                             </svg>
                           </div>
                           <div className="footer-arrow-secondary">
-                            <svg className="footer-icon-arrow" viewBox="0 0 384 512">
+                            <svg
+                              className="footer-icon-arrow"
+                              viewBox="0 0 384 512"
+                            >
                               <path d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z" />
                             </svg>
                           </div>
@@ -190,26 +221,71 @@ const Footer = () => {
             <div className="nav-column">
               <h3 className="footer-nav-label">Helping Hands</h3>
               <ul className="footer-nav-list">
-                <li><a href="https://www.youtube.com/@sheryians" target="_blank" rel="noopener noreferrer">Sheryians Coding School</a></li>
-                <li><a href="https://www.youtube.com/@framer.university" target="_blank" rel="noopener noreferrer">Framer University</a></li>
-                <li><a href="https://www.youtube.com/@olivierlarose1" target="_blank" rel="noopener noreferrer">Olivier La Rose</a></li>
-                <li><a href="https://www.youtube.com/@codegrid" target="_blank" rel="noopener noreferrer">Codegrid</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Blog</a></li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@sheryians"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Sheryians Coding School
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@framer.university"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Framer University
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@olivierlarose1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Olivier La Rose
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@codegrid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Codegrid
+                  </a>
+                </li>
+                <li>
+                  <a href="#">FAQs</a>
+                </li>
+                <li>
+                  <a href="#">Blog</a>
+                </li>
               </ul>
             </div>
             <div className="nav-column">
               <h3 className="footer-nav-label">Design DNA</h3>
               <ul className="footer-nav-list">
-                <li><a href="#">madebyshape</a></li>
-                <li><a href="#">minhpham</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Contact</a></li>
+                <li>
+                  <a href="#">madebyshape</a>
+                </li>
+                <li>
+                  <a href="#">minhpham</a>
+                </li>
+                <li>
+                  <a href="#">Services</a>
+                </li>
+                <li>
+                  <a href="#">Careers</a>
+                </li>
+                <li>
+                  <a href="#">Contact</a>
+                </li>
               </ul>
             </div>
             <div className="nav-column contact-info">
-              <h3 className="footer-nav-label">Get in touch</h3>
               <div className="footer-contact-links">
                 <a href="tel:+918637506250" className="footer-contact-link">
                   <svg className="footer-icon-small" viewBox="0 0 512 512">
@@ -217,25 +293,26 @@ const Footer = () => {
                   </svg>
                   +91 8637506250
                 </a>
-                <a href="mailto:koushik.hashcode@gmail.com" className="footer-contact-link">
+                <a
+                  href="mailto:koushik.hashcode@gmail.com"
+                  className="footer-contact-link"
+                >
                   <svg className="footer-icon-small" viewBox="0 0 512 512">
                     <path d="M0 64h512v80L256 320 0 144V64zm0 384V182.8l237.9 163.6 18.1 12.4 18.1-12.5L512 182.8V448H0z" />
                   </svg>
                   koushik.hashcode@gmail.com
                 </a>
-                <a 
-                  href="https://maps.app.goo.gl/tmDwGzb8RmwZMtbQ7" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://maps.app.goo.gl/tmDwGzb8RmwZMtbQ7"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="footer-address"
-                  style={{ textDecoration: 'none' }}
+                  style={{ textDecoration: "none" }}
                 >
                   <svg className="footer-icon-small" viewBox="0 0 384 512">
                     <path d="M192 512s192-208 192-320C384 86 298 0 192 0S0 86 0 192c0 112 192 320 192 320zm0-384a64 64 0 110 128 64 64 0 110-128z" />
                   </svg>
-                  <p>
-                    Bagula, Nadia, West Bengal, India
-                  </p>
+                  <p>Bagula, Nadia, West Bengal, India</p>
                 </a>
               </div>
             </div>
@@ -264,7 +341,6 @@ const Footer = () => {
             <a href="#">Privacy Policy (you really care?)</a>
           </div>
         </div>
-
       </div>
     </footer>
   );
