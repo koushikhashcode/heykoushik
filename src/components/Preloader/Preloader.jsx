@@ -1,11 +1,18 @@
 import React from "react";
 import "./Preloader.css";
-import preloaderImg from "../../assets/preloader.jpg";
+import signVideo from "../../assets/video/sign.mp4";
 
 const Preloader = ({ isLoading }) => {
   return (
     <div className={`preloader ${!isLoading ? "fade-out" : ""}`}>
-      <img src={preloaderImg} alt="Loading..." className="preloader-image" />
+      <video
+        src={signVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="preloader-video"
+      />
     </div>
   );
 };

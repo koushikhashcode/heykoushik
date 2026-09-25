@@ -1395,14 +1395,7 @@ export const BagBuckleLock = ({
         </g>
       </svg>
 
-      {/* Interactive status badge on hover */}
-      <div
-        className={`buckle-tooltip ${
-          isGold || isTwoTone ? "buckle-tooltip-gold" : "buckle-tooltip-noir"
-        } ${isHovered ? "buckle-tooltip-visible" : "buckle-tooltip-hidden"}`}
-      >
-        {isLocked ? "Locked (scroll up to open)" : "Open (scroll down to lock)"}
-      </div>
+
     </div>
   );
 };

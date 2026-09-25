@@ -1,13 +1,12 @@
 import React, { useState, useCallback } from "react";
 import Educationjouney from "../Educationjouney/Educationjouney";
+import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
-import { BagBuckleLock } from "./BagBuckleLock";
 import "./BuckleLock.css";
 
 export const BuckleLockTransition = () => {
   const [isLocked, setIsLocked] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [palette, setPalette] = useState("gold");
 
   const handleLockChange = useCallback((locked) => {
     setIsLocked(locked);
@@ -64,26 +63,7 @@ export const BuckleLockTransition = () => {
           {/* Academic Journey Timeline */}
           <Educationjouney />
 
-          {/* BUCKLE LOCK — centred, bottom edge 300px below the black section */}
-          <div
-            style={{
-              position: "absolute",
-              left: "50%",
-              bottom: "-240px",
-              transform: "translateX(-50%)",
-              width: "clamp(90px, 9.5vw, 125px)",
-              height: "clamp(240px, 25vw, 330px)",
-              zIndex: 35,
-              pointerEvents: "auto",
-            }}
-          >
-            <BagBuckleLock
-              palette={palette}
-              onPaletteChange={setPalette}
-              onLockChange={handleLockChange}
-              style={{ width: "100%", height: "100%" }}
-            />
-          </div>
+
         </div>
 
         {/* Spacer that keeps the buckle visible and the shadow unclipped.
@@ -98,7 +78,7 @@ export const BuckleLockTransition = () => {
           style={{
             position: "relative",
             width: "100%",
-            marginTop: "310px",
+            marginTop: "200px",
             zIndex: 15,
             /* White page itself starts with a matching top padding
                so content doesn't crowd the shadow region */
@@ -109,6 +89,7 @@ export const BuckleLockTransition = () => {
             className="white-paper-base"
             style={{ backgroundColor: "#FFFFFF" }}
           >
+            <Contact isLocked={isLocked} />
             <Footer />
           </div>
         </div>
